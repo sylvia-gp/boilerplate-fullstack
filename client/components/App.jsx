@@ -1,26 +1,26 @@
 import React from 'react'
 
-import { getFruits } from '../apiClient'
+import { getTanks } from '../apiClient'
 
 class App extends React.Component {
   state = {
-    fruits: []
+    tanks: []
   }
 
   componentDidMount () {
-    getFruits()
-      .then(fruits => {
-        this.setState({fruits})
+    getTanks()
+      .then(tanks => {
+        this.setState({tanks})
       })
   }
 
   render () {
     return (
       <div className='app'>
-        <h1>Fullstack Boilerplate</h1>
+        <h1>Welcome to your tanks!</h1>
         <ul>
-          {this.state.fruits.map(fruit => (
-            <li key={fruit}>{fruit}</li>
+          {this.state.tanks.map(tank => (
+            <li key={tank.id}>{tank}</li>
           ))}
         </ul>
       </div>

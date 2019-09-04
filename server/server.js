@@ -1,12 +1,13 @@
 const path = require('path')
 const express = require('express')
 
-const fruitRoutes = require('./routes/fruits')
+const tankRoutes = require('./routes/tanks')
 
 const server = express()
 
 server.use(express.static(path.join(__dirname, 'public')))
+server.use(express.urlencoded({extended: true}))
 
-server.use('/api/v1/fruits', fruitRoutes)
+server.use('/api/v1/tanks', tankRoutes)
 
 module.exports = server

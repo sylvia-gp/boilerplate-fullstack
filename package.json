@@ -6,11 +6,12 @@
   "scripts": {
     "dev": "run-p dev:client dev:server",
     "dev:client": "npm run build --watch",
-    "dev:server": "nodemon --ignore server/public server",
+    "dev:server": "nodemon server",
     "build": "webpack --config client/webpack.config.js",
     "server": "node server",
     "start": "run-s build server",
-    "test": "jest --verbose --watchAll"
+    "test": "jest --verbose --watchAll",
+    "knex": "knex"
   },
   "babel": {
     "presets": [
@@ -29,7 +30,10 @@
     ]
   },
   "dependencies": {
-    "express": "^4.16.4"
+    "3": "^2.1.0",
+    "express": "^4.16.4",
+    "knex": "^0.19.2",
+    "sqlite": "^3.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",

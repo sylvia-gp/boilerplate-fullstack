@@ -1,9 +1,26 @@
+const environment = process.env.NODE_ENV || 'development'
+const config = require('../knexfile')[environment]
+const connection = require('knex')(config)
+
 module.exports = {
-  getFruits
+  getTanks: getTanks,
+  newFish: newFish,
+  getFish: getFish,
+  editFish: editFish
 }
 
-let fruits = ['banana', 'apple', 'feijoa']
+function getTanks (db = connection) {
+  return db('tanks').select()
+}
 
-function getFruits () {
-  return Promise.resolve(fruits)
+function newFish (fish, db = connection) {
+  return db('fish').insert(fish)
+}
+
+function getFish (db = connection) {
+  return db('fish').select()
+}
+
+function editFish (updatedFish, id, db = connection) {
+  return db('fish').where('fish.id', id).update(updatedFish)
 }
