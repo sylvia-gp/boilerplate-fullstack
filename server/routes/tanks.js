@@ -6,7 +6,8 @@ const router = express.Router()
 router.get('/', (req, res) => {
   db.getTanks()
   .then(tanks => {
-      res.json({tanks})
+    console.log(tanks)
+      res.json(tanks)
   })
 })
 
