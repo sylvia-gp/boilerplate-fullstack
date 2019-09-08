@@ -15,10 +15,8 @@ class App extends React.Component {
 
   }
   componentDidMount() {
-    console.log('this is where we call our api')
-    request.get('/api/v1/tanks/')
-    .then(response => {
-      const tanks = response.body
+    getTanks()
+    .then(tanks => {
       this.setState({
         tanks: tanks
       })
