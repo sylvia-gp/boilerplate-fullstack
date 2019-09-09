@@ -10,13 +10,12 @@ router.get('/', (req, res) => {
   })
 })
 
-// router.get('/tank:id', (req, res) => {
-//   db.getTanks()
-//   .where('tanks.id', req.params.id)
-//   .then((result) => {
-//       res.render('partials/tankinfopage', {tanks: result})
-//   })
-// })
+router.get('/:id', (req, res) => {
+  db.getTankById(id)
+  .then(tank => {
+    res.json(tank)
+  })
+})
 
 // router.get('/tank:id/fish', (req, res) => {
 //   const id = req.params.id

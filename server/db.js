@@ -6,11 +6,16 @@ module.exports = {
   getTanks: getTanks,
   newFish: newFish,
   getFish: getFish,
-  editFish: editFish
+  editFish: editFish,
+  getTankById: getTankById
 }
 
 function getTanks (db = connection) {
   return db('tanks').select()
+}
+
+function getTankById (id, db = connection) {
+  return db('tanks').where('tank.id', id).select()
 }
 
 function newFish (fish, db = connection) {
