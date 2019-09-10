@@ -28,7 +28,7 @@ export default class TankListing extends React.Component{
             <img src={this.state.tank.img} height='200' width='200' />
             <ul>
             <li><Link to={`/fish/${this.props.match.params.id}`}>Check out your fish</Link></li>
-            <li>Update your cleaning roster</li>
+            <li><Link to={`/tanks/${this.props.match.params.id}/cleaning`}>Update your cleaning roster</ Link></li>
             <li>Wanna see your tank parameters?</li>
             </ul>
             </React.Fragment>
