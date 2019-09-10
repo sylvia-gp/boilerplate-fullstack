@@ -23,7 +23,6 @@ export default class Nav extends React.Component{
   }
 
   render() {
-    //  console.log(this.tanks)
     return (
       <React.Fragment>
       <h1>Your tanks:</h1>

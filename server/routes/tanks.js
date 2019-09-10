@@ -17,6 +17,13 @@ router.get('/:id', (req, res) => {
   })
 })
 
+router.get('/fish/:id', (req, res) => {
+  db.getFishByTankId(req.params.id)
+  .then(fish => {
+      res.json(fish)
+  })
+})
+
 // router.get('/tank:id/fish', (req, res) => {
 //   const id = req.params.id
 //   knex('fish')
@@ -29,13 +36,7 @@ router.get('/:id', (req, res) => {
 //   })
 // })
 
-// router.get('/fish:id', (req, res) => {
-//   db.getFish()
-//   .where('fish.id', req.params.id)
-//   .then((result) => {
-//       res.render('partials/editfish', {fish: result})
-//   })
-// })
+
 
 // router.post('/fish:id', (req, res) => {
 //   const id = req.params.id

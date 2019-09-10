@@ -7,7 +7,8 @@ module.exports = {
   newFish: newFish,
   getFish: getFish,
   editFish: editFish,
-  getTankById: getTankById
+  getTankById: getTankById,
+  getFishByTankId: getFishByTankId
 }
 
 function getTanks (db = connection) {
@@ -15,11 +16,11 @@ function getTanks (db = connection) {
 }
 
 function getTankById (id, db = connection) {
-  return db('tanks').where('id', id).select()
+  return db('tanks').where('tanks.id', id).select()
 }
 
-function newFish (fish, db = connection) {
-  return db('fish').insert(fish)
+function getFishByTankId (id, db = connection) {
+  return db('fish').where('tank_id', id).select()
 }
 
 function getFish (db = connection) {
@@ -28,4 +29,8 @@ function getFish (db = connection) {
 
 function editFish (updatedFish, id, db = connection) {
   return db('fish').where('fish.id', id).update(updatedFish)
+}
+
+function newFish (fish, db = connection) {
+  return db('fish').insert(fish)
 }

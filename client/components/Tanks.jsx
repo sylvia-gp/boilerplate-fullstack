@@ -1,7 +1,7 @@
 import React from 'react'
 
 import {getTankById} from "../apiClient.js"
-import { thisExpression } from '@babel/types';
+import{Link} from 'react-router-dom'
 
 export default class TankListing extends React.Component{
     constructor(props){
@@ -15,10 +15,9 @@ export default class TankListing extends React.Component{
     componentDidMount() {
         getTankById(this.props.match.params.id)
         .then(res => {
-            console.log(res.body)
-            // this.setState = {
-            //     tank: res.body
-            // }
+            this.setState = {
+                tank: res.body
+            }
         })
     }
 
@@ -26,9 +25,11 @@ export default class TankListing extends React.Component{
         return(
             <div>
             <h1>Welcome to tank {this.props.match.params.id}!</h1>
-            <p>Check out your fish</p>
-            <p>Update your cleaning roster</p>
-            <p>Wanna see your tank parameters?</p>
+            <ul>
+            <li><Link to={`/fish/${this.props.match.params.id}`}>Check out your fish</Link></li>
+            <li>Update your cleaning roster</li>
+            <li>Wanna see your tank parameters?</li>
+            </ul>
             </div>
         )
     }
