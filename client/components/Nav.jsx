@@ -29,7 +29,7 @@ export default class Nav extends React.Component{
       <h1>Your tanks:</h1>
       <ul>
         {this.state.tanks.map(tank => {
-          return <li key={tank.id}><Link to={`/${tank.id}`}>Tank: {tank.id}, {tank.litres} litres</Link></li>
+          return <li key={tank.id}><Link to={`/tanks/${tank.id}`}>Tank: {tank.id}, {tank.litres} litres</Link></li>
         })}
       </ul>
       </React.Fragment>

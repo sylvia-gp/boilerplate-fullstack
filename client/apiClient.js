@@ -10,7 +10,7 @@ export function getTanks () {
 }
 
 export function getTankById (id) {
-  return request.get(rootUrl + '/tanks/:id')
+  return request.get(rootUrl + `/tanks/${id}`)
   // .then(result => {
   //   return result.body
   // })

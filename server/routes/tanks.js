@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
 })
 
 router.get('/:id', (req, res) => {
-  db.getTankById(id)
+  db.getTankById(req.params.id)
   .then(tank => {
     res.json(tank)
   })

@@ -55,7 +55,7 @@ const App = () => {
           <Route path='/' component={Nav} />
           <div className="content">
             <Route exact path='/' component={Home} />
-            <Route path='/:id' component={TankListing} />
+            <Route path='/tanks/:id' component={TankListing} />
           </div>
         </div>
       </div>

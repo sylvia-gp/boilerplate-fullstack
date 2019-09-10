@@ -15,7 +15,7 @@ export default class TankListing extends React.Component{
     componentDidMount() {
         getTankById(this.props.match.params.id)
         .then(res => {
-            console.log(res)
+            console.log(res.body)
             // this.setState = {
             //     tank: res.body
             // }
@@ -24,8 +24,12 @@ export default class TankListing extends React.Component{
 
     render() {
         return(
-            
-            <h1>This is the tanks jsx for tank{this.props.match.params.id}</h1>
+            <div>
+            <h1>Welcome to tank {this.props.match.params.id}!</h1>
+            <p>Check out your fish</p>
+            <p>Update your cleaning roster</p>
+            <p>Wanna see your tank parameters?</p>
+            </div>
         )
     }
 }

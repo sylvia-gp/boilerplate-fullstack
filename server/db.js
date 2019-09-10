@@ -15,7 +15,7 @@ function getTanks (db = connection) {
 }
 
 function getTankById (id, db = connection) {
-  return db('tanks').where('tank.id', id).select()
+  return db('tanks').where('id', id).select()
 }
 
 function newFish (fish, db = connection) {
