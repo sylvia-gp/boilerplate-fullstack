@@ -13,3 +13,9 @@ export function getTankById (id) {
 export function getFishByTankId (id) {
   return request.get(rootUrl + `/tanks/fish/${id}`)
 }
+
+export function newFish (fish) {
+  return request.post(rootUrl + '/tanks/newFish')
+  .send(fish)
+  .catch(e => {console.log(e) })
+}

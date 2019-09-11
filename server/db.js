@@ -32,5 +32,11 @@ function editFish (updatedFish, id, db = connection) {
 }
 
 function newFish (fish, db = connection) {
-  return db('fish').insert(fish)
+  return db('fish')
+    .insert({
+      image: fish.image,
+      species: fish.species,
+      quantity: fish.quantity,
+      tank_id: fish.tank_id
+    })
 }

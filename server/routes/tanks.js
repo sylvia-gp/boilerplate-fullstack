@@ -24,6 +24,13 @@ router.get('/fish/:id', (req, res) => {
   })
 })
 
+router.post('/newFish', (req, res) => {
+  db.newFish(req.body)
+  .then(() => {
+    res.status(201).send('')
+  })
+})
+
 // router.get('/tank:id/fish', (req, res) => {
 //   const id = req.params.id
 //   knex('fish')
@@ -38,18 +45,6 @@ router.get('/fish/:id', (req, res) => {
 
 
 
-// router.post('/fish:id', (req, res) => {
-//   const id = req.params.id
-//   const updatedFish = {
-//       id: id,
-//       species: req.body.species,
-//       quantity: req.body.quantity,
-//       tank_id: req.body.tank_id
-//   }
-//   db.editFish(updatedFish, id)
-//   .then(function () {
-//       res.redirect('/')
-//   })
-// })
+
 
 module.exports = router
