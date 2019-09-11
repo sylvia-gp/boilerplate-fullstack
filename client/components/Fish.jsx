@@ -31,6 +31,7 @@ export default class FishListing extends React.Component {
             return <li key={fish.id}><img src={fish.image} height='200' /><p>Fish: {fish.species} - Number in tank: {fish.quantity}</p></li>
           })}
         </ul>
+        <Link to="/fish/add">Wanna add a fish? Click here!</Link>
       </React.Fragment>
     )
   }
