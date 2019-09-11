@@ -25,7 +25,7 @@ export default class FishListing extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <h1>Here are some fish</h1>
+        <h2>Here are some fish</h2>
         <ul>
           {this.state.fishes.map(fish => {
             return <li key={fish.id}><img src={fish.image} height='200' /><p>Fish: {fish.species} - Number in tank: {fish.quantity}</p></li>

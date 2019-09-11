@@ -13,12 +13,23 @@ const App = () => {
       <div className='app'>
         <h1>Welcome to your tanks!</h1>
         <div className='container'>
+          <div class="row">
+          <div class="col-sm">
           <Route path='/' component={Nav} />
+          </div>
+          <div class="col-sm">
           <div className="content">
             <Route exact path='/' component={Home} />
             <Route path='/tanks/:id' component={TankListing} />
+            </div>
+            </div>
+            <div class="col-sm">
             <Route path='/fish/:id' component={FishListing} />
+            </div>
+            <div class="col-sm">
             <Route path='/fish/add' component={AddFish} />
+            
+            </div>
           </div>
         </div>
       </div>

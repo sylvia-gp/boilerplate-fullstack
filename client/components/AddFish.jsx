@@ -35,7 +35,7 @@ export default class AddFish extends React.Component {
   render() {
     return (
       <div>
-        <h1>Add a baby!</h1>
+        <h2>Add a baby!</h2>
         <form method="POST" onSubmit={this.handleSubmit}>
           <p>
             <label>
