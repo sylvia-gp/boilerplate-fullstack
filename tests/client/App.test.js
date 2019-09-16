@@ -1,7 +1,7 @@
 import React from 'react'
 import Enzyme, {shallow, render, mount} from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
-import './setup-env'
+// import './setup-env'
 
 import App from '../../client/components/App'
 App.prototype.componentDidMount = () => {}
@@ -18,10 +18,10 @@ test('<App> root has className of app', () => {
   expect(root.length).toBe(1)
 })
 
-test('page header includes fruit', () => {
+test('page header welcomes to tanks', () => {
   const wrapper = render(<App />)
   const h1 = wrapper.find('h1')
-  expect(h1.text()).toMatch(/Fruit/)
+  expect(h1.text()).toMatch('Welcome to your tanks!')
 })
 
 test('renders an <li> for each fruit', () => {
