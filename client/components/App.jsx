@@ -11,8 +11,9 @@ const App = () => {
   return (
     <Router>
       <div className='app'>
-        <h1>Welcome to your tanks!</h1>
+        
         <div className='container'>
+          <h1>Welcome to your tanks!</h1>
           <div class="row">
           <div class="col-sm">
           <Route path='/' component={Nav} />
