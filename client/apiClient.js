@@ -19,3 +19,7 @@ export function newFish (fish) {
   .send(fish)
   .catch(e => {console.log(e) })
 }
+
+export function deleteFish (fishId) {
+  return request.del(rootUrl + `/fish/${fishId}`)
+}

@@ -31,6 +31,15 @@ router.post('/newFish', (req, res) => {
   })
 })
 
+router.delete('/fish/:id', (req, res) => {
+  const id = req.params.id
+
+  db.deleteFish(id)
+  .then(
+    res.redirect('/fish/:id')
+  )
+})
+
 // router.get('/tank:id/fish', (req, res) => {
 //   const id = req.params.id
 //   knex('fish')

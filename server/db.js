@@ -8,7 +8,8 @@ module.exports = {
   getFish: getFish,
   editFish: editFish,
   getTankById: getTankById,
-  getFishByTankId: getFishByTankId
+  getFishByTankId: getFishByTankId,
+  deleteFish: deleteFish
 }
 
 function getTanks (db = connection) {
@@ -39,4 +40,10 @@ function newFish (fish, db = connection) {
       quantity: fish.quantity,
       tank_id: fish.tank_id
     })
+}
+
+function deleteFish (id, db = connection) {
+  return db('fish')
+  .where('id', id)
+  .delete()
 }
