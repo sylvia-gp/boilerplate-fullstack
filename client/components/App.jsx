@@ -6,6 +6,7 @@ import Nav from './Nav'
 import TankListing from './Tanks'
 import FishListing from './Fish'
 import AddFish from './AddFish.jsx'
+import NewTank from './NewTank.jsx'
 
 const App = () => {
   return (
@@ -14,22 +15,22 @@ const App = () => {
         
         <div className='container'>
           <h1>Welcome to your tanks!</h1>
-          <div class="row">
-          <div class="col-sm">
+          <div className="row">
+          <div className="col-sm">
           <Route path='/' component={Nav} />
           </div>
-          <div class="col-sm">
+          <div className="col-sm">
           <div className="content">
             <Route exact path='/' component={Home} />
             <Route path='/tanks/:id' component={TankListing} />
             </div>
             </div>
-            <div class="col-sm">
+            <div className="col-sm">
             <Route path='/fish/:id' component={FishListing} />
             </div>
-            <div class="col-sm">
+            <div className="col-sm">
             <Route path='/fish/add' component={AddFish} />
-            
+            <Route path='/newTank' component={NewTank} />
             </div>
           </div>
         </div>

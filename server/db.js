@@ -8,7 +8,8 @@ module.exports = {
   getFish: getFish,
   editFish: editFish,
   getTankById: getTankById,
-  getFishByTankId: getFishByTankId
+  getFishByTankId: getFishByTankId,
+  newTank: newTank
 }
 
 function getTanks (db = connection) {
@@ -39,4 +40,12 @@ function newFish (fish, db = connection) {
       quantity: fish.quantity,
       tank_id: fish.tank_id
     })
+}
+
+function newTank (tank, db = connection) {
+  return db('tanks')
+  .insert({
+    litres: tank.litres,
+    img: tank.img
+  })
 }

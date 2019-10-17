@@ -31,6 +31,13 @@ router.post('/newFish', (req, res) => {
   })
 })
 
+router.post('/newTank', (req, res) => {
+  db.newTank(req.body)
+  .then(() => {
+    res.status(201).send('')
+  })
+})
+
 // router.get('/tank:id/fish', (req, res) => {
 //   const id = req.params.id
 //   knex('fish')
