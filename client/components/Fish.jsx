@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import { deleteFish, getFishByTankId } from "../apiClient.js"
+import { getFishByTankId } from "../apiClient.js"
 
 
 export default class FishListing extends React.Component {
@@ -22,14 +22,9 @@ export default class FishListing extends React.Component {
       })
   }
 
-  deleteFish() {
-    deleteFish(id)
-  }
-
   render() {
     return (
       <React.Fragment>
-        {console.log(this.props)}
         <h2>Here are some fish</h2>
         <ul>
           {this.state.fishes.map(fish => {
@@ -38,7 +33,6 @@ export default class FishListing extends React.Component {
               <p>
                 Fish: {fish.species} - Number in tank: {fish.quantity}
               </p>
-            <button onClick={this.deleteFish(fish.id)}>Delete Fish</button>
             <button>Edit Fish</button></li>
           })}
         </ul>

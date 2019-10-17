@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { getTankById } from "../apiClient.js"
+import { getTanks } from "../apiClient.js"
 import { Link } from 'react-router-dom'
 
 export default class TankListing extends React.Component {
@@ -8,15 +8,15 @@ export default class TankListing extends React.Component {
         super(props)
 
         this.state = {
-            tank: {}
+            tanks: []
         }
     }
 
     componentDidMount() {
-        getTankById(this.props.match.params.id)
+        getTanks()
             .then(res => {
                 this.setState({
-                    tank: res.body[0]
+                    tanks: res.body
                 })
             })
     }
@@ -25,8 +25,12 @@ export default class TankListing extends React.Component {
         return (
             <React.Fragment>
                 <h2>Welcome to tank {this.props.match.params.id}!</h2>
-                <img src={this.state.tank.img} height='250' />
                 <ul>
+                    {this.state.tanks.map(tank => {
+                        if (tank.id == this.props.match.params.id) {
+                        return <img src={tank.img} height='250' />
+                        }
+                    })}
                     <li><Link to={`/fish/${this.props.match.params.id}`}>Check out your fish</Link></li>
                     <li><Link to={`/tanks/${this.props.match.params.id}/cleaning`}>Update your cleaning roster</ Link></li>
                     <li>Wanna see your tank parameters?</li>
