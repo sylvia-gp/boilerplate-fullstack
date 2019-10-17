@@ -1,25 +1,27 @@
 import request from 'superagent'
 
-const rootUrl = '/api/v1'
+const rootUrl = '/api/v1/tanks'
 
 export function getTanks () {
-  return request.get(rootUrl + '/tanks')
+  return request.get(rootUrl + '/')
 }
 
 export function getTankById (id) {
-  return request.get(rootUrl + `/tanks/${id}`)
+  return request.get(rootUrl + `/${id}`)
 }
 
 export function getFishByTankId (id) {
-  return request.get(rootUrl + `/tanks/fish/${id}`)
+  return request.get(rootUrl + `/fish/${id}`)
 }
 
 export function newFish (fish) {
-  return request.post(rootUrl + '/tanks/newFish')
+  return request.post(rootUrl + '/newFish')
   .send(fish)
   .catch(e => {console.log(e) })
 }
 
-export function deleteFish (fishId) {
-  return request.del(rootUrl + `/fish/${fishId}`)
+export function newTank (tank) {
+  return request.post(rootUrl + '/newTank')
+  .send(tank)
+  .catch(e => {console.log(e)})
 }

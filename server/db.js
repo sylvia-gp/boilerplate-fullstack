@@ -9,7 +9,7 @@ module.exports = {
   editFish: editFish,
   getTankById: getTankById,
   getFishByTankId: getFishByTankId,
-  deleteFish: deleteFish
+  newTank: newTank
 }
 
 function getTanks (db = connection) {
@@ -42,8 +42,10 @@ function newFish (fish, db = connection) {
     })
 }
 
-function deleteFish (id, db = connection) {
-  return db('fish')
-  .where('id', id)
-  .delete()
+function newTank (tank, db = connection) {
+  return db('tanks')
+  .insert({
+    litres: tank.litres,
+    img: tank.img
+  })
 }

@@ -31,6 +31,7 @@ export default class Nav extends React.Component{
           return <li key={tank.id}><Link to={`/tanks/${tank.id}`}>Tank: {tank.id}, {tank.litres} litres</Link></li>
         })}
       </ul>
+      <p><Link to='/newTank'>New tank? Click here!</Link></p>
       </React.Fragment>
     )
   }
