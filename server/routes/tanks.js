@@ -31,21 +31,11 @@ router.post('/newFish', (req, res) => {
   })
 })
 
-<<<<<<< HEAD
-router.delete('/fish/:id', (req, res) => {
-  const id = req.params.id
-
-  db.deleteFish(id)
-  .then(
-    res.redirect('/fish/:id')
-  )
-=======
 router.post('/newTank', (req, res) => {
   db.newTank(req.body)
   .then(() => {
     res.status(201).send('')
   })
->>>>>>> a4013ec0e921bb4a3010c78afbd703bfdc383289
 })
 
 // router.get('/tank:id/fish', (req, res) => {
