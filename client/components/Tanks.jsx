@@ -28,7 +28,7 @@ export default class TankListing extends React.Component {
                 <ul>
                     {this.state.tanks.map(tank => {
                         if (tank.id == this.props.match.params.id) {
-                        return <img src={tank.img} height='250' />
+                        return <img key={tank.id} src={tank.img} height='250' />
                         }
                     })}
                     <li><Link to={`/fish/${this.props.match.params.id}`}>Check out your fish</Link></li>
